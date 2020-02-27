@@ -36,9 +36,9 @@ if (intercept('POST')) {
             'paRes' => $post[$paResParam]
         )
     );
-
+    $gatewayUrl1="https://${prefix}gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
     // decode paRes by calling Process ACS Result to obtain result
-    $response = doRequest($gatewayUrl.'/3DSecureId/'.$threeDSecureId, 'POST', json_encode($data), $headers);
+    $response = doRequest($gatewayUrl1.'/3DSecureId/'.$threeDSecureId, 'POST', json_encode($data), $headers);
 
     // build mobile redirect
     doRedirect("gatewaysdk://3dsecure?acsResult=" . urlencode($response));
