@@ -56,8 +56,8 @@ if (intval($apiVersion) < 39) {
 }
 // https://test-adcb.mtf.gateway.mastercard.com/ma
 // build api endpoint url
-$gatewayUrl1 = "https://test-adcb.mtf.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
-$gatewayUrl = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+$gatewayUrl = "https://test-adcb.mtf.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+$gatewayUrl1 = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
 
 // parse query string
 $query = array();
