@@ -19,10 +19,15 @@
 error_reporting('all');
 
 // pull environment vars
-$merchantId = getenv('GATEWAY_MERCHANT_ID');
-$password = getenv('GATEWAY_API_PASSWORD');
-$region = getenv('GATEWAY_REGION');
-$apiVersion = getenv('GATEWAY_API_VERSION');
+// $merchantId = getenv('GATEWAY_MERCHANT_ID');
+// $password = getenv('GATEWAY_API_PASSWORD');
+// $region = getenv('GATEWAY_REGION');
+// $apiVersion = getenv('GATEWAY_API_VERSION');
+
+$merchantId = '120810000016';
+$password = '9d1440a505bee98c6a8ec53955fd83dd';
+$region = 'MTF';
+$apiVersion = '47';
 
 // merchant id must be TEST
 $merchantIdPrefix = substr($merchantId, 0, 4);
@@ -56,9 +61,9 @@ if (intval($apiVersion) < 39) {
 }
 // https://test-adcb.mtf.gateway.mastercard.com/ma
 // build api endpoint url
-$gatewayUrl = "https://test-adcb.mtf.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
-$gatewayUrl1 = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
-
+// $gatewayUrl = "https://test-adcb.mtf.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+// $gatewayUrl1 = "https://${prefix}.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
+$gatewayUrl = "https://adcb.gateway.mastercard.com/api/rest/version/${apiVersion}/merchant/${merchantId}";
 // parse query string
 $query = array();
 parse_str($_SERVER['QUERY_STRING'], $query);
